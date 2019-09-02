@@ -5,9 +5,10 @@ import 'package:http/http.dart' as http;
 
 import 'package:restaurant_finder/DataLayer/location.dart';
 import 'package:restaurant_finder/DataLayer/restaurant.dart';
+import 'package:restaurant_finder/api_key.dart';
 
 class ZomatoClient {
-  final _apiKey = 'PASTE YOUR API KEY HERE';
+  final _apiKey = zomatoApiKey;
   final _host = 'developers.zomato.com';
   final _contextRoot = 'api/v2.1';
 
