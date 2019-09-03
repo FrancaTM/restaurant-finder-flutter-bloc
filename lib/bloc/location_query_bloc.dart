@@ -10,7 +10,7 @@ class LocationQueryBloc implements Bloc {
 
   Stream<List<Location>> get locationStream => _controller.stream;
 
-  void _submitQuery(String query) async {
+  void submitQuery(String query) async {
     final results = await _client.fetchLocations(query);
     _controller.sink.add(results);
   }
