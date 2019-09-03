@@ -15,7 +15,7 @@ class RestaurantFinder extends StatelessWidget {
         bloc: FavoriteBloc(),
         child: MaterialApp(
           title: 'Restaurant Finder',
-          theme: ThemeData(primaryColor: Colors.red),
+          theme: ThemeData(primarySwatch: Colors.red),
           home: MainScreen(),
         ),
       ),
