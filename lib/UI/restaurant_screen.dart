@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:restaurant_finder/DataLayer/location.dart';
 import 'package:restaurant_finder/DataLayer/restaurant.dart';
 import 'package:restaurant_finder/UI/favorite_screen.dart';
+import 'package:restaurant_finder/UI/location_screen.dart';
 import 'package:restaurant_finder/UI/restaurant_tile.dart';
 import 'package:restaurant_finder/bloc/bloc_provider.dart';
 import 'package:restaurant_finder/bloc/restaurant_bloc.dart';
@@ -28,6 +29,17 @@ class RestaurantScreen extends StatelessWidget {
         ],
       ),
       body: _buildSearch(context),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.edit_location),
+        onPressed: () => Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => LocationScreen(
+              isFullScreenDialog: true,
+            ),
+            fullscreenDialog: true,
+          ),
+        ),
+      ),
     );
   }
 
