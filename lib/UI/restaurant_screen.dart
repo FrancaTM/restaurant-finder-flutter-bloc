@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_finder/DataLayer/location.dart';
 import 'package:restaurant_finder/DataLayer/restaurant.dart';
+import 'package:restaurant_finder/UI/favorite_screen.dart';
 import 'package:restaurant_finder/UI/restaurant_tile.dart';
 import 'package:restaurant_finder/bloc/bloc_provider.dart';
 import 'package:restaurant_finder/bloc/restaurant_bloc.dart';
@@ -15,6 +16,16 @@ class RestaurantScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(location.title),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.favorite_border),
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => FavoriteScreen(),
+              ),
+            ),
+          ),
+        ],
       ),
       body: _buildSearch(context),
     );
